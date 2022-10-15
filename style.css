@@ -1,0 +1,89 @@
+html, body {
+    margin: 0;
+    background:  hsl(30, 38%, 92%);
+}
+.block {
+    background: white;
+    border-radius: 10px;
+    width: 600px;
+    height: 450px;
+    position: relative;
+    display: flex;
+    left: 150px;
+    top: 150px;
+}
+.img {
+    height: 450px;
+    width: 300px;
+    background-image: url(images/image-product-desktop.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 300px auto; 
+    position: absolute;
+    border-radius: 10px 0 0 10px;    
+}
+.textblock {
+    height: 450px;
+    width: 300px;
+    position: relative;
+    margin-left: 300px;
+}
+.btn {
+    background-color: hsl(158, 36%, 37%);
+    position: absolute;
+    border-radius: 10px;
+    height: 50px;
+    width: 250px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn::before {
+    content: url("images/icon-cart.svg");
+    margin-right: 5px;
+}
+.price {
+    font-family: 'Fraunces', serif;
+    color: hsl(158, 36%, 37%);
+    font-size: 28px;
+    margin-left: 25px; 
+    font-weight: 700;
+}
+.bold700 {
+    font-family: 'Fraunces', serif;
+    color: black;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 20px;
+    padding-left: 5px;
+}
+.perf {
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+    font-weight: 500;
+    letter-spacing: .5em;
+    padding-left: 25px;
+    padding-top: 15px;
+    font-size: 14px;
+}
+.text {
+    font-family: 'Montserrat', sans-serif; 
+    color: grey;
+    font-weight: 500;
+    padding-left: 25px;
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.row {
+    display: flex;
+    align-items: center;
+    left: 20px;
+}
+.thrg {
+    text-decoration: line-through;
+}
