@@ -1,89 +1,111 @@
 html, body {
+    height: 100%;
+    width: 100%;
     margin: 0;
+}
+p {
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background:  hsl(30, 38%, 92%);
 }
-.block {
+.product-card {                     /* общий блок */
     background: white;
     border-radius: 10px;
     width: 600px;
     height: 450px;
-    position: relative;
     display: flex;
-    left: 150px;
-    top: 150px;
+    margin: auto;
+    overflow: hidden;
 }
-.img {
-    height: 450px;
+.product-card .product-preview {
     width: 300px;
-    background-image: url(images/image-product-desktop.jpg) ;
-    background-repeat: no-repeat;
-    background-size: 300px auto; 
-    position: absolute;
-    border-radius: 10px 0 0 10px;    
-}
-.textblock {
     height: 450px;
-    width: 300px;
-    position: relative;
-    margin-left: 300px;
 }
-.btn {
-    background-color: hsl(158, 36%, 37%);
-    position: absolute;
-    border-radius: 10px;
-    height: 50px;
-    width: 250px;
-    border: none;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 25px;
+.product-card .product-info {                 /* правая сторона, описание */
+    width: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    justify-content: space-between;
+    overflow: hidden;
 }
-.btn::before {
-    content: url("images/icon-cart.svg");
-    margin-right: 5px;
+.product-texts-wrapper {
+    overflow: hidden;
+    margin-bottom: 10px;
 }
-.price {
-    font-family: 'Fraunces', serif;
-    color: hsl(158, 36%, 37%);
-    font-size: 28px;
-    margin-left: 25px; 
-    font-weight: 700;
-}
-.bold700 {
-    font-family: 'Fraunces', serif;
-    color: black;
-    font-size: 32px;
-    font-weight: 700;
-    margin: 20px;
-    padding-left: 5px;
-}
-.perf {
+.product-card .product-type {                       /* perfume */
     font-family: 'Montserrat', sans-serif;
     color: grey;
     font-weight: 500;
     letter-spacing: .5em;
-    padding-left: 25px;
-    padding-top: 15px;
     font-size: 14px;
+    margin-bottom: 20px;
+    word-wrap: break-word;            /* перенос по словам */
 }
-.text {
+.product-card .product-title {                     /* заголовок */
+    font-family: 'Fraunces', serif;
+    color: black;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    word-wrap: break-word;            /* перенос по словам */
+    max-height: 120px;               /* макс высота для блока "заголовок" */
+    overflow: hidden;
+}
+.product-card .product-description {                  /*  текст, описание */
     font-family: 'Montserrat', sans-serif; 
     color: grey;
     font-weight: 500;
-    padding-left: 25px;
-    padding-right: 20px;
     font-size: 14px;
     line-height: 1.5em;
+    margin-bottom: 20px;
+    word-wrap: break-word;            /* перенос по словам */
+    overflow: auto;
+    max-height: 100px;                   /* макс высота для блока "заголовок" */
 }
-.row {
+.product-card .product-prices {           /* положение цены */
     display: flex;
     align-items: center;
-    left: 20px;
+    flex-wrap: wrap;                     /* положение цены , если цена очень длинная*/
 }
-.thrg {
+.product-card .product-prices .new-price {                     /* цена со скидкой */
+    font-family: 'Fraunces', serif;
+    color: hsl(158, 36%, 37%);
+    font-size: 28px;
+    font-weight: 700;
+}
+.product-card .product-prices .old-price {       /* зачеркнутый текст */
     text-decoration: line-through;
+    font-family: 'Montserrat', sans-serif; 
+    color: grey;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-left: 20px;
+}
+.product-card .btn-add-to-card {                               /* кнопка */
+    background-color: hsl(158, 36%, 37%);
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-shrink: 0;                  /* кнопка не будет сжиматься, если будет дохуя текста сверху. (1 - может сжиматься) */
+}
+.product-card .btn-add-to-card::before {          /* иконка кнопки */
+    content: url("images/icon-cart.svg");
+    margin-right: 5px;
+}
+.product-card .btn-add-to-card:hover {
+    background-color:  hsl(158, 83%, 14%);
+    cursor: pointer;
 }
